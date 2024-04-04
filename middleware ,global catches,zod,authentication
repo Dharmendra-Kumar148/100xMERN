@@ -1,0 +1,109 @@
+const express = require("express");
+// const app = express();
+
+// app.get("/health-checkup", function (req, res) {
+//   const username = req.headers.username;
+//   const password = req.headers.password;
+//   const kidneyId = req.query.kidneyId;
+
+//   if (username != "abhay" || password != "123") {
+//     res.status(400).json({ msg: "1.somethings up with your inputs" });
+//     return;
+//   }
+//   if (kidneyId != 1 && kidneyId != 2) {
+//     res.status(400).json({ msg: "2.somethings up with your inputs" });
+//     return;
+//   }
+//   res.json({
+//     msg: "kidneys are healthy",
+//   });
+// });
+
+// app.listen(3000);
+
+// input validation
+// const express = require("express");
+// const app = express();
+// app.use(express.json());
+// app.post("/health-checkup", function (req, res) {
+//   // kidneys=[1,2]
+//   const kidneys = req.body.kidneys;
+//     const kidneylength = kidneys.length;
+//     res.send("you have" + kidneylength + "kidneys");
+// });
+// app.use(function(err,req,res,next){
+//   res.json({
+//     msg:"server goes dwon or falls"
+//   })
+// })
+
+// app.listen(3000);
+
+// input validation using zod
+
+// const express = require("express");
+// const zod = require("zod");
+// const app = express();
+// const schema = zod.array(zod.number());
+
+// //{
+// //  email: string=>email
+// //  password: atleast 8 letters
+// //  country: "IN","US
+// //}
+
+// const schema=zod.object({
+//   email: zod.string(),
+//   password: z.string(),
+//   country: z.letter("IN").or(z.letter("US")),
+//   kidneys: z.array(z.number())
+// })
+
+// app.use(express.json());
+// app.get("/health-checkup", function (req, res) {
+//   const kidneys = req.body.kidneys;
+//   const response = schema.safeParse(kidneys);
+//   if(!response.success){
+//     res.status(411).json({
+//       msg:"invalid inputs",
+//     })
+//   }
+//   else{
+//     res.send({
+//     response
+//    })
+//   }
+
+// });
+// app.listen(3000);
+
+
+
+
+// const zod = require("zod");
+// function validateinput(arr) {
+//   const schema = zod.array(zod.number());
+//   const response = schema.safeParse(arr);
+//   console.log(response);
+// }
+
+// validateinput(["1", 2, 3]);
+
+
+
+
+// //zod is an independent library
+// const zod = require("zod");
+// function validateinput(obj) {
+//   const schema = zod.object({
+//     email:zod.string().email(),
+//     password:zod.string().min(8)
+//   });
+//   const response = schema.safeParse(obj);
+//   console.log(response);
+// }
+
+// validateinput({
+//   email:"abhay@gmail.com",
+//   password:"abhay1234"
+// });
